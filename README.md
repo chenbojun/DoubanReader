@@ -1,2 +1,2 @@
-# DoubanReade
+# DoubanReader
 Welcom to DoubanReader!
