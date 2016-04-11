@@ -1,6 +1,7 @@
 package com.example.hzchenbojun.doubanreader.view.utils;
 
 import com.example.hzchenbojun.doubanreader.view.apis.DoubanBookService;
+import com.example.hzchenbojun.doubanreader.view.beans.Book;
 import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
 
 import okhttp3.OkHttpClient;
@@ -36,7 +37,11 @@ public class HttpUtil {
     public void search(String queryMsg, final Callback<BookSet> callback) {
         Call<BookSet> call = mDounbanBookService.search(queryMsg, 0, 10);
         call.enqueue(callback);
+    }
 
+    public void getBookById(String id, final Callback<Book> callback) {
+        Call<Book> call = mDounbanBookService.getDetailById(id);
+        call.enqueue(callback);
     }
 
 }

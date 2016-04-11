@@ -9,5 +9,5 @@ public interface MainView {
     public String getQueryMsg();
     public void displayBooks(BookSet books);
     public void displayError(String errorMsg);
-    public void click(int position);
+    public void showDetailActivity(String id);
 }

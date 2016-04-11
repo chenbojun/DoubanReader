@@ -50,7 +50,9 @@ public class Book {
         for(int i = 0; i < size - 1; i++) {
             result += author.get(i) + "、";
         }
-        result += author.get(size - 1) + "/";
+        if(size > 0) {
+            result += author.get(size - 1) + "/";
+        }
         result += publisher + "/";
         result += pubdate;
         return result;
@@ -64,5 +66,17 @@ public class Book {
 
     public String getPrice() {
         return "价格：" + price;
+    }
+
+    public String getAuthor() {
+        String result = "";
+        int size = author.size();
+        for(int i = 0; i < size - 1; i++) {
+            result += author.get(i) + "、";
+        }
+        if(size > 0) {
+            result += author.get(size - 1) + "/";
+        }
+        return result;
     }
 }

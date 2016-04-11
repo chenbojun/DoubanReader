@@ -45,6 +45,10 @@ public class MainPresenter {
         };
         HttpUtil.getInstance().search(queryMsg, callback);
     }
+    public void showBookDetail(int position){
+        String id = mBooksModel.getBookSet().books.get(position).id;
+        mMainView.showDetailActivity(id);
+    }
     public void onDestroy() {
         mMainView = null;
     }

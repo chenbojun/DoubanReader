@@ -15,4 +15,17 @@
     <style name="PriceStyle" >
         <item name="android:textColor">@color/light_gray</item>
     </style>
+
+    <style name="DetailTitleStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="DetailContentlabelStyle">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
 </resources>

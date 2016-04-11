@@ -1,6 +1,7 @@
 package com.example.hzchenbojun.doubanreader.view.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import com.example.hzchenbojun.doubanreader.R;
 import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
 import com.example.hzchenbojun.doubanreader.view.presenters.MainPresenter;
 
-public class MainActivity extends Activity implements MainView{
+public class MainActivity extends AppCompatActivity implements MainView{
 
     private MainPresenter mMainPresenter;
     private MyAdapter myAdapter;
@@ -48,6 +49,12 @@ public class MainActivity extends Activity implements MainView{
         mRecyclerView = (RecyclerView)findViewById(R.id.recycleView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         myAdapter = new MyAdapter(MainActivity.this, new BookSet());
+        myAdapter.setMyItemClickListener(new MyAdapter.MyItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                mMainPresenter.showBookDetail(position);
+            }
+        });
         mRecyclerView.setAdapter(myAdapter);
         //mRecyclerView.addItemDecoration(new MyDecoration(MainActivity.this));
     }
@@ -58,9 +65,10 @@ public class MainActivity extends Activity implements MainView{
 
     @Override
     public void displayBooks(BookSet bookSet) {
-        myAdapter.setDataSet(bookSet);
-        for(int i = 0; i < bookSet.books.size(); i++) {
-            Log.v("bookset",bookSet.books.get(i).getName());
+        if(bookSet.books.size() == 0) {
+            //No results
+        } else {
+            myAdapter.setDataSet(bookSet);
         }
     }
 
@@ -70,10 +78,17 @@ public class MainActivity extends Activity implements MainView{
     }
 
     @Override
-    public void click(int position) {
-
+    public void showDetailActivity(String id) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSearchView.clearFocus();
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
