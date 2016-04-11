@@ -10,4 +10,5 @@ public interface MainView {
     public void displayBooks(BookSet books);
     public void displayError(String errorMsg);
     public void showDetailActivity(String id);
+    public void loadMore(BookSet books);
 }

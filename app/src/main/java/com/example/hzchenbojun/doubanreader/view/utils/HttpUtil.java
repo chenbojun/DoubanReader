@@ -34,8 +34,8 @@ public class HttpUtil {
         mDounbanBookService = retrofit.create(DoubanBookService.class);
     }
 
-    public void search(String queryMsg, final Callback<BookSet> callback) {
-        Call<BookSet> call = mDounbanBookService.search(queryMsg, 0, 10);
+    public void search(String queryMsg, int start, int count, final Callback<BookSet> callback) {
+        Call<BookSet> call = mDounbanBookService.search(queryMsg, start, count);
         call.enqueue(callback);
     }
 

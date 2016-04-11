@@ -10,18 +10,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.View;
 
 import com.example.hzchenbojun.doubanreader.R;
 import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
 import com.example.hzchenbojun.doubanreader.view.presenters.MainPresenter;
 
-public class MainActivity extends AppCompatActivity implements MainView{
+public class MainActivity extends AppCompatActivity implements MainView {
 
     private MainPresenter mMainPresenter;
     private MyAdapter myAdapter;
     private SearchView mSearchView;
     private RecyclerView mRecyclerView;
+
+    private boolean isSearch = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,18 @@ public class MainActivity extends AppCompatActivity implements MainView{
             }
         });
         mRecyclerView.setAdapter(myAdapter);
+        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                LinearLayoutManager lm = (LinearLayoutManager)recyclerView.getLayoutManager();
+                int lastPosition = lm.findLastCompletelyVisibleItemPosition();
+                if (newState == RecyclerView.SCROLL_STATE_IDLE
+                        &&  lastPosition + 1 == myAdapter.getItemCount() && isSearch) {
+                    mMainPresenter.loadMore();
+                }
+            }
+        });
         //mRecyclerView.addItemDecoration(new MyDecoration(MainActivity.this));
     }
     @Override
@@ -66,10 +81,16 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     public void displayBooks(BookSet bookSet) {
+        if(bookSet == null) {
+            return;
+        }
         if(bookSet.books.size() == 0) {
             //No results
         } else {
+            isSearch = true;
             myAdapter.setDataSet(bookSet);
+            myAdapter.notifyDataSetChanged();
+            mRecyclerView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -83,6 +104,12 @@ public class MainActivity extends AppCompatActivity implements MainView{
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
         intent.putExtra("id", id);
         startActivity(intent);
+    }
+    @Override
+    public void loadMore(BookSet bookSet) {
+        myAdapter.bookSet.books.addAll(bookSet.books);
+        myAdapter.bookSet.count += bookSet.count;
+        myAdapter.notifyDataSetChanged();
     }
 
     @Override

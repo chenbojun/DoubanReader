@@ -9,6 +9,7 @@ import com.example.hzchenbojun.doubanreader.view.utils.DataBaseUtil;
  * Created by hzchenbojun on 2016/4/9.
  */
 public class BookSetModel {
+    public String queryMsg;
     public void saveBookSet(BookSet bookSet) {
         DataBaseUtil.getInstance().saveBookSet(bookSet);
     }
