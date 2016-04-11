@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NameStyle" >
+        <item name="android:textColor">@color/light_blue</item>
+    </style>
+
+    <style name="PriceStyle" >
+        <item name="android:textColor">@color/light_gray</item>
+    </style>
 </resources>

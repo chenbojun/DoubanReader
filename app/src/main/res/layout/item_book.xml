@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/recycleView_Item_ImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:scaleType="fitXY"
+        />
+    <LinearLayout
+        android:id="@+id/recycleView_Item_Msg_LinearLayout"
+        android:layout_toRightOf="@id/recycleView_Item_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/recycleView_Item_Name_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/NameStyle"
+            />
+        <TextView
+            android:id="@+id/recycleView_Item_PublishMsg_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/recycleView_Item_EvaluateMsg_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/recycleView_Item_Price_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/PriceStyle"
+            />
+    </LinearLayout>
+</RelativeLayout>

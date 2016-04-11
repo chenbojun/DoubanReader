@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DoubanReader</string>
+    <string name="query_hint">书名、作者、ISBN</string>
 </resources>
