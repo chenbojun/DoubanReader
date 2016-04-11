@@ -1,5 +1,6 @@
 package com.example.hzchenbojun.doubanreader.view.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -7,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * Created by hzchenbojun on 2016/4/9.
  */
-public class Book {
+public class Book implements Serializable{
     public Rating rating;
     public String subtitle;
     public List<String> author = new ArrayList<String>();
