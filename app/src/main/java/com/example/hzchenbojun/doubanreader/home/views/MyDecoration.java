@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.doubanreader.view.views;
+package com.example.hzchenbojun.doubanreader.home.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;

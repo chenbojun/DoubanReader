@@ -1,8 +1,8 @@
-package com.example.hzchenbojun.doubanreader.view.utils;
+package com.example.hzchenbojun.doubanreader.home.utils;
 
-import com.example.hzchenbojun.doubanreader.view.apis.DoubanBookService;
-import com.example.hzchenbojun.doubanreader.view.beans.Book;
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.apis.DoubanBookService;
+import com.example.hzchenbojun.doubanreader.home.beans.Book;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;

@@ -1,7 +1,7 @@
-package com.example.hzchenbojun.doubanreader.view.apis;
+package com.example.hzchenbojun.doubanreader.home.apis;
 
-import com.example.hzchenbojun.doubanreader.view.beans.Book;
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.beans.Book;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

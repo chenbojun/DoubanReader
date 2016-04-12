@@ -1,9 +1,7 @@
-package com.example.hzchenbojun.doubanreader.view.views;
+package com.example.hzchenbojun.doubanreader.home.views;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hzchenbojun.doubanreader.R;
-import com.example.hzchenbojun.doubanreader.view.beans.Book;
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.beans.Book;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
 import com.squareup.picasso.Picasso;
 
 /**

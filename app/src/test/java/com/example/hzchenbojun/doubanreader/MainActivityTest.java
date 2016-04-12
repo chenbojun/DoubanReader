@@ -4,16 +4,14 @@ import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 
-import com.example.hzchenbojun.doubanreader.view.views.MainActivity;
+import com.example.hzchenbojun.doubanreader.home.views.MainActivity;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
-import org.robolectric.shadows.ShadowApplication;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.Is.is;

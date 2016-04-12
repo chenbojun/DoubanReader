@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.doubanreader.view.utils;
+package com.example.hzchenbojun.doubanreader.home.utils;
 
 /**
  * Created by hzchenbojun on 2016/3/11.

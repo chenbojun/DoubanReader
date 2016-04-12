@@ -1,7 +1,7 @@
-package com.example.hzchenbojun.doubanreader.view.models;
+package com.example.hzchenbojun.doubanreader.home.models;
 
-import com.example.hzchenbojun.doubanreader.view.beans.Book;
-import com.example.hzchenbojun.doubanreader.view.utils.DataBaseUtil;
+import com.example.hzchenbojun.doubanreader.home.beans.Book;
+import com.example.hzchenbojun.doubanreader.home.utils.DataBaseUtil;
 
 /**
  * Created by hzchenbojun on 2016/4/11.

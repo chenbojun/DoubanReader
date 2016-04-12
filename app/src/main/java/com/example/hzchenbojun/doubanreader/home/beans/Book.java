@@ -1,9 +1,8 @@
-package com.example.hzchenbojun.doubanreader.view.beans;
+package com.example.hzchenbojun.doubanreader.home.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by hzchenbojun on 2016/4/9.

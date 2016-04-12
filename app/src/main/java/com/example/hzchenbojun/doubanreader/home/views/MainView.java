@@ -1,6 +1,6 @@
-package com.example.hzchenbojun.doubanreader.view.views;
+package com.example.hzchenbojun.doubanreader.home.views;
 
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
 
 /**
  * Created by hzchenbojun on 2016/4/9.

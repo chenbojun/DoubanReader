@@ -1,7 +1,6 @@
-package com.example.hzchenbojun.doubanreader.view.views;
+package com.example.hzchenbojun.doubanreader.home.views;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.ImageView;
@@ -9,11 +8,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hzchenbojun.doubanreader.R;
-import com.example.hzchenbojun.doubanreader.view.beans.Book;
-import com.example.hzchenbojun.doubanreader.view.presenters.DetailPresenter;
+import com.example.hzchenbojun.doubanreader.home.beans.Book;
+import com.example.hzchenbojun.doubanreader.home.presenters.DetailPresenter;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 public class DetailActivity extends Activity implements DetailView{
     private DetailPresenter mDetailPresenter;

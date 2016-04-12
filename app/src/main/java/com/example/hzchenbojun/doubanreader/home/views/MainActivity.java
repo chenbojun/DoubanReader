@@ -1,10 +1,6 @@
-package com.example.hzchenbojun.doubanreader.view.views;
+package com.example.hzchenbojun.doubanreader.home.views;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,14 +8,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
-import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.hzchenbojun.doubanreader.R;
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
-import com.example.hzchenbojun.doubanreader.view.presenters.MainPresenter;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.presenters.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 

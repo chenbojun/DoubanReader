@@ -1,4 +1,4 @@
-package com.example.hzchenbojun.doubanreader.view.beans;
+package com.example.hzchenbojun.doubanreader.home.beans;
 
 import java.io.Serializable;
 

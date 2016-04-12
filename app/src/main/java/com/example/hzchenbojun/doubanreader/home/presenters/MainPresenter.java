@@ -1,11 +1,9 @@
-package com.example.hzchenbojun.doubanreader.view.presenters;
+package com.example.hzchenbojun.doubanreader.home.presenters;
 
-import android.util.Log;
-
-import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
-import com.example.hzchenbojun.doubanreader.view.models.BookSetModel;
-import com.example.hzchenbojun.doubanreader.view.utils.HttpUtil;
-import com.example.hzchenbojun.doubanreader.view.views.MainView;
+import com.example.hzchenbojun.doubanreader.home.beans.BookSet;
+import com.example.hzchenbojun.doubanreader.home.models.BookSetModel;
+import com.example.hzchenbojun.doubanreader.home.utils.HttpUtil;
+import com.example.hzchenbojun.doubanreader.home.views.MainView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
