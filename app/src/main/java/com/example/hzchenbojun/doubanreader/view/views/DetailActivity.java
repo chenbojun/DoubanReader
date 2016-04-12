@@ -3,8 +3,10 @@ package com.example.hzchenbojun.doubanreader.view.views;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hzchenbojun.doubanreader.R;
 import com.example.hzchenbojun.doubanreader.view.beans.Book;
@@ -61,7 +63,9 @@ public class DetailActivity extends Activity implements DetailView{
 
     @Override
     public void dispalyError(String errorMsg) {
-
+        Toast toast = Toast.makeText(this, errorMsg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     private void init() {

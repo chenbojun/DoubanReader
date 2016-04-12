@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.graphics.Canvas;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,7 +13,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.hzchenbojun.doubanreader.R;
 import com.example.hzchenbojun.doubanreader.view.beans.BookSet;
@@ -23,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private MyAdapter myAdapter;
     private SearchView mSearchView;
     private RecyclerView mRecyclerView;
-
+    private AlertDialog loadingAlertDialog;
     private boolean isSearch = false;
 
     @Override
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     private void init() {
         mMainPresenter = new MainPresenter(this);
+        loadingAlertDialog = new AlertDialog.Builder(this).setMessage("正在努力加载···").create();
         mSearchView = (SearchView)findViewById(R.id.searchView);
         mSearchView.setIconified(false);
         mSearchView.setIconifiedByDefault(false);
@@ -85,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
             return;
         }
         if(bookSet.books.size() == 0) {
-            //No results
+            Toast toast = Toast.makeText(this, "抱歉没有您想要的结果~", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
         } else {
             isSearch = true;
             myAdapter.setDataSet(bookSet);
@@ -96,7 +103,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void displayError(String errorMsg) {
-
+        Toast toast = Toast.makeText(this, errorMsg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     @Override
@@ -110,6 +119,17 @@ public class MainActivity extends AppCompatActivity implements MainView {
         myAdapter.bookSet.books.addAll(bookSet.books);
         myAdapter.bookSet.count += bookSet.count;
         myAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void showProgress() {
+        loadingAlertDialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+        loadingAlertDialog.dismiss();
+        mSearchView.clearFocus();
     }
 
     @Override

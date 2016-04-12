@@ -24,6 +24,9 @@ public class MainPresenter {
     }
     public void search() {
         mBooksModel.queryMsg = mMainView.getQueryMsg();
+        if(mMainView != null) {
+            mMainView.showProgress();
+        }
         Callback<BookSet> callback = new Callback<BookSet>() {
             @Override
             public void onResponse(Call<BookSet> call, Response<BookSet> response) {
@@ -31,12 +34,14 @@ public class MainPresenter {
                 mBooksModel.saveBookSet(bookSet);
                 if(mMainView != null) {
                     mMainView.displayBooks(bookSet);
+                    mMainView.hideProgress();
                 }
             }
             @Override
             public void onFailure(Call<BookSet> call, Throwable t) {
                 String errorMsg = t.getMessage();
                 if(mMainView != null) {
+                    mMainView.hideProgress();
                     mMainView.displayError(errorMsg);
                 }
             }
