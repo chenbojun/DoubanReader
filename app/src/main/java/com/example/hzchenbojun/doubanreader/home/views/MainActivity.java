@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        //123
     }
 
     private void init() {
